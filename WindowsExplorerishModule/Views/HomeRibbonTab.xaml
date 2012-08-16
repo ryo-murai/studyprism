@@ -1,0 +1,68 @@
+﻿<ribbon:RibbonTab x:Class="WindowsExplorerish.Views.HomeRibbonTab"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                  xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                  xmlns:mycmd="clr-namespace:WindowsExplorerish.Commands"
+                  mc:Ignorable="d" 
+                  Header="Home"
+                  d:DesignHeight="300" d:DesignWidth="300">
+    <ribbon:RibbonGroup x:Name="Clipboard" Header="Clipboard">
+        <ribbon:RibbonButton LargeImageSource="/WindowsExplorerishModule;component/Images/Copy.png" Label="Copy">
+        </ribbon:RibbonButton>
+        <ribbon:RibbonButton LargeImageSource="/WindowsExplorerishModule;component/Images/Paste.png" Label="Paste">
+            
+        </ribbon:RibbonButton>
+        <ribbon:RibbonButton SmallImageSource="/WindowsExplorerishModule;component/Images/Cut.png" Label="Cut">
+            
+        </ribbon:RibbonButton>
+        <ribbon:RibbonButton SmallImageSource="/WindowsExplorerishModule;component/Images/CopyPath.png" Label="Copy Path">
+            
+        </ribbon:RibbonButton>
+        
+    </ribbon:RibbonGroup>
+    <ribbon:RibbonGroup x:Name="Organize" Header="Organize">
+        <ribbon:RibbonButton LargeImageSource="/WindowsExplorerishModule;component/Images/MoveTo.png" Label="Move to">
+
+        </ribbon:RibbonButton>
+        <ribbon:RibbonButton LargeImageSource="/WindowsExplorerishModule;component/Images/CopyTo.png" Label="Copy to">
+
+        </ribbon:RibbonButton>
+        
+        <ribbon:RibbonSeparator />
+
+        <ribbon:RibbonButton LargeImageSource="/WindowsExplorerishModule;component/Images/Delete.png" Label="Delete">
+
+        </ribbon:RibbonButton>
+        <ribbon:RibbonButton LargeImageSource="/WindowsExplorerishModule;component/Images/Rename.png" Label="Rename">
+
+        </ribbon:RibbonButton>
+
+    </ribbon:RibbonGroup>
+    <ribbon:RibbonGroup Header="New">
+        <ribbon:RibbonButton LargeImageSource="/WindowsExplorerishModule;component/Images/Folder.png" Label="New folder">
+
+        </ribbon:RibbonButton>
+        <ribbon:RibbonButton SmallImageSource="/WindowsExplorerishModule;component/Images/Copy.png" Label="New Item">
+
+        </ribbon:RibbonButton>
+    </ribbon:RibbonGroup>
+
+    <ribbon:RibbonGroup Header="Open">
+        <ribbon:RibbonButton LargeImageSource="/WindowsExplorerishModule;component/Images/Properties.png" Label="Properties">
+
+        </ribbon:RibbonButton>
+        <ribbon:RibbonButton SmallImageSource="/WindowsExplorerishModule;component/Images/Copy.png" Label="Open"
+                             Command="{x:Static mycmd:HomeCommands.Open}">
+
+        </ribbon:RibbonButton>
+        <ribbon:RibbonButton SmallImageSource="/WindowsExplorerishModule;component/Images/Edit.png" Label="Edit">
+
+        </ribbon:RibbonButton>
+        <ribbon:RibbonButton SmallImageSource="/WindowsExplorerishModule;component/Images/Print.png" Label="Print">
+
+        </ribbon:RibbonButton>
+    </ribbon:RibbonGroup>
+
+</ribbon:RibbonTab>

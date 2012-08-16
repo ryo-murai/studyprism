@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="WindowsExplorerish.Views.FileListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:localview="clr-namespace:WindowsExplorerish.Views"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <i:Interaction.Triggers>
+        <prism:InteractionRequestTrigger
+            SourceObject="{Binding ConfirmNavigationInteractionRequest}">
+            <localview:ShowMessageBoxAction />
+        </prism:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
+
+    <StackPanel Orientation="Vertical">
+
+        <TextBlock Text="{Binding Path}" />
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Files}" IsReadOnly="True" SelectedItem="{Binding SelectedItem}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Height="20">
+                                <Image Source="{Binding Icon}" Margin="5,0,5,0" />
+                                <TextBlock Grid.Column="1" Text="{Binding Name, Mode=OneWay}" TextAlignment="Left"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding LastUpdateDate}" Header="Update"/>
+                <DataGridTextColumn Binding="{Binding Type}" Header="Type"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Size}" Header="Size"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</UserControl>
